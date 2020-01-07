@@ -1,0 +1,10 @@
+body {
+	background-image: url(https://github.com/zibbini/minor_projects/raw/master/wallpaper_main.png);
+	background-repeat: no-repeat;
+  	background-size: 100%;
+}
+
+div {
+  background-color: rgba(255, 255, 255, 0);
+  padding: 0.25em;
+}

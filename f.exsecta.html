@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>f.exsecta.utf8</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/lumen.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="wallpaper.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 54px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h2 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h3 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h4 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h5 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.section h6 {
+  padding-top: 59px;
+  margin-top: -59px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Portfolio</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="allproject.html">All projects</a>
+</li>
+<li>
+  <a href="https://github.com/zibbini">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<p><br/></p>
+<div id="further-analysis-into-the-ecology-of-formica-exsecta-at-chudleigh-knighton-heath-devon" class="section level1">
+<h1>Further analysis into the ecology of <em>Formica exsecta</em> at Chudleigh Knighton Heath, Devon</h1>
+<style>
+div.one { background-color:#FFFFFF; border-radius: 5px; padding: 20px; opacity: 0.85;}
+</style>
+<div class="one">
+<h2 id="introduction">Introduction</h2>
+<p>During the course of my undergraduate dissertation, there were some additional questions raised that I did not have the time to answer and so will aim to do so here. This project page is split into several sections, reflecting the sub-projects I wanted to explore. <strong>Section 1</strong> will cover analyses into parameters, either directly measured in situ or that were be quantified after the fact, which were not explored in my dissertation. <strong>Section 2</strong> will cover various additional methods for visualising the daily temperature regimes of the nests of <em>F. exsecta</em>, that were also not explored. Finally, <strong>Section 3</strong> will briefly showcase a simple GUI I developed for exploring key nesting characteristics of individual <em>F. exsecta</em> nests at the reserve.</p>
+</div>
+<p><br/></p>
+<style>
+div.results { background-color:#FFFFFF; border-radius: 5px; padding: 20px; opacity: 0.95;}
+</style>
+<div class="results">
+<h2 id="section-1-analysis-of-the-remaining-parameters">Section 1: Analysis of the remaining parameters</h2>
+<p>The remaining parameters that were not able to be analysed are: individual nest size (diameter in cm), commencement date for brood production, cessation date for brood production, total time individual nests produced brood (days) and finally the distance between individual nests (m). There are a variety of nest sizes present at Chudleigh Knighton Heath, with the majority being small to moderately sized nests (Fig. 1a). There are very few exceptionally large nests, whilst also a number of very small nests that are mostly satellites to larger, polygynous nests (Fig. 1a). <em>F. exsecta</em> nests at this reserve also have particularly short windows of brood production (Fig. 1c), with most nests commencing brood production in late August and cessating brood production in early October (Fig. 1b and 1d respectively).</p>
+<p><img src="img/f.exsecta/dist_plots.png" /></p>
+<p><strong>Figure 1</strong>. Frequency distribution of various nest parameters: individual nest size (a) and temporal measures of brood production (b - d). Data courtesy of Walters (2018).</p>
+<p>There is some discussion in the literature that relatively small nest sizes (in comparison to other <em>F. exsecta</em> populations), may be an indicator of sub-optimal environmental conditions. It would follow that with such a densely populated reserve as Chudleigh Knighton Heath, resource competition may be fierce if environmental conditions are sub-optimal. Especially so if not all of the nests are polygynous, and as a result do not exchange resources and instead are territorial (I have covered this in far more detail in my dissertation which you can find <a href="">here</a>). Using all the above parameters, I conducted analyses across the ~174 nests at the reserve to quantify if intra-nest distances had any relationship with individual nest size and brood production.</p>
+<p><img src="img/f.exsecta/nestdist_plots.png" /></p>
+<p><strong>Figure 2</strong>. Scatter plots with corresponding regression line and standard error bounds for the relationship between distance between nests and (a) total brood production time and (b) nest diameter.</p>
+<p>Surprisingly, intra-nest distance was significantly, but weakly negatively correlated with individual nest size (r = -0.22, <em>t</em><sub> 90</sub> = -2.19, P &lt; 0.05). Conversely, intra-nest distance was only weakly positively correlated with the total brood production time (r = 0.06, <em>t</em><sub> 90</sub> = 0.54, P = 0.59).</p>
+<p><img src="img/f.exsecta/nestdiam_plot.png" /></p>
+<p><strong>Figure 3</strong>. Scatter plot with corresponding regression line and standard error bounds for the relationship between nest diameter and total brood production time.</p>
+<p>Interestingly, nest diameter was significantly, weakly positively correlated with total brood production time (r = 0.27, <em>t</em><sub> 174</sub> = 3.7, P &lt; 0.001). This is most likely a reflection of the data rather than any particular relationship between the parameters. Specifically, nests below 10 cm in diameter in general do not produce brood. As a result, the data is very likely skewed due to this, causing the tests to over-fit. The same can be applied to Fig. 2b, where the abscence of small nests at an intra-nest distance below 2m is likely having the same effect. However, in both circumstances additional intepretations can be drawn, namely that the abscence of data below a specific threshold could convey information about the population itself. In other words, we can speculate that the abscence of small nests (&lt; 10cm) at very low intra-nest distances (&lt; 2m), could be a result of more pronounced competition at smaller intra-nest distances. The presence of small nests at higher intra-nest distances could reflect much lower competition. On the other hand, the fact that only several nests were observed producing brood for more than 1-2 days could reflect a constraint on brood production due to nest size. Taken together, these results suggest that conservation efforts such as translocation, should target medium to large nests (&gt; 10 cm) and translocate them to areas where the distance to the closest nest is &gt; 2m.</p>
+</div>
+<div id="methods" class="section level2">
+<h2>Methods</h2>
+</div>
+</div>
+
+<style>
+	.footer {
+		background-color: #FFFFFF;
+		padding: 5px;
+		opacity: 0.8;
+	}
+</style>
+
+
+<br>
+<div class="footer" align="center">
+	© 2019 Ziad Ibbini. |
+	<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC-BY-4.0</a> 
+	| Contact:<a href="mailto: ziadibbini@gmail.com"> ziadibbini@gmail.com</a>
+</div>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

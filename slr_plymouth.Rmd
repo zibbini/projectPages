@@ -1,0 +1,49 @@
+---
+title: ""
+output:
+  html_document:
+    toc: true
+    toc_float: 
+      collapsed: false
+      smooth_scroll: false
+    css: wallpaper.css
+    theme: lumen
+    include:
+      after_body: footer.html
+---
+
+<br/>
+
+# Visualising the impact of future sea level rise on Plymouth and the surrounding areas
+
+<style>
+div.one { background-color:#FFFFFF; border-radius: 5px; padding: 20px; opacity: 0.85;}
+</style>
+
+<div class = "one">
+
+### Introduction
+
+Insert text here
+
+I had the following questions before going into the analysis itself:
+
+* What is the projected sea level rise in Plymouth and the surrouding areas?
+* How much land will be lost as a result? 
+
+</div>
+
+<br/>
+
+<style>
+div.results { background-color:#FFFFFF; border-radius: 5px; padding: 20px; opacity: 0.95;}
+</style>
+
+<div class = "results">
+
+### Results
+
+</div>
+
+### Methods
+

@@ -1,0 +1,61 @@
+---
+title: ""
+output:
+  html_document:
+    css: wallpaper.css
+    theme: lumen
+    include:
+      after_body: footer.html
+---
+
+<br/>
+<style>
+div.one { background-color: #FFFFFF; border-radius: 5px; padding: 20px; opacity: 0.85;}
+</style>
+<div class = "one">
+
+## Welcome.
+
+##### This is a collection of projects that I have completed or am in the process of doing so. They are the by-product of the personal development that I do in my own time.
+
+</div>
+
+<br/>
+
+## Pinned projects:
+
+<hr/>
+
+<div class = "one">
+
+### tidedashboard: A web based GUI for viewing tide data in Ireland
+
+Interactive dashboards built with `shiny`, `leaflet` and `dygraphs` for viewing both historic and modelled tide data in Ireland. All data for the published dashboards was sourced from the [Marine Institute](https://www.marine.ie/Home/home) in Ireland. 
+
+[**Read more...**](tidedashboard.html) **|** [**Source code**](https://github.com/zibbini/tidedashboard)
+
+</div>
+
+<br/>
+
+<div class = "one">
+
+### Visualising the impact of future sea level rise on Plymouth and the surrounding areas
+
+Combining Met Office model predictions with LIDAR data to visualise potential sea level rise in Plymouth. Models used were the average prediction of each corresponding representative concentration pathway (RCP 2.6, 4.5 and 8.5). This project leveraged QGIS, bash and R. 
+
+[**Read more...**](slr_plymouth.html) **|** [**Source code**](https://github.com/zibbini/minor_projects/tree/master/SLR_Plymouth)
+
+</div>
+
+<br/>
+
+<div class = "one">
+
+### Exploring the distribution of ancient woodland in England
+
+An initial exploration into some basic characteristics of ancient woodland sites, followed by a more in-depth look at the climatic conditions found across sites. This project leveraged R and bash.
+
+[**Read more...**](ancientwoodland.html) **|** [**Source code**](https://github.com/zibbini/minor_projects/tree/master/ancient_woodland)
+
+</div>
