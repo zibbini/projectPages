@@ -33,7 +33,7 @@ Interactive dashboards built with `shiny`, `leaflet` and `dygraphs` for viewing 
 
 ### Visualising the impact of future sea level rise on Plymouth and the surrounding areas
 
-Combining Met Office model predictions with LIDAR data to visualise potential sea level rise in Plymouth. Models used were the average prediction of each corresponding representative concentration pathway (RCP 2.6, 4.5 and 8.5). This project leveraged QGIS, bash and R. 
+Combining Met Office model predictions with LIDAR data to visualise potential sea level rise in Plymouth. Models used were the average prediction of each corresponding representative concentration pathway (RCP 2.6, 4.5 and 8.5). 
 
 [**Read more...**](slr_plymouth.html) **|** [**Source code**](https://github.com/zibbini/minor_projects/tree/master/SLR_Plymouth)
 
@@ -43,9 +43,9 @@ Combining Met Office model predictions with LIDAR data to visualise potential se
 
 <div class = "one">
 
-### Exploring the distribution of ancient woodland in England
+### Exploring the distribution of Ancient Woodland in England
 
-An initial exploration into some basic characteristics of ancient woodland sites, followed by a more in-depth look at the climatic conditions found across sites. This project leveraged R and bash.
+An initial exploration into some basic characteristics of Ancient Woodland sites, followed by a more in-depth look at the climatic conditions found across sites and methods to identify areas that are likely to contain Ancient Woodland.
 
 [**Read more...**](ancientwoodland.html) **|** [**Source code**](https://github.com/zibbini/minor_projects/tree/master/ancient_woodland)
 
@@ -55,12 +55,22 @@ An initial exploration into some basic characteristics of ancient woodland sites
 
 <div class = "one">
 
-### Further analysis into the ecology of *F. exsecta* at Chudleigh Knighton Heath, Devon
+### Visualising the inner nest temperature of *F. exsecta* nests 
 
-Here I quantify the relationship between individual nest size and various nesting phenology indicators - as well as showcase various formats for visualising temperature data and a useful gui for exploring individual nesting characteristics at the site itself. 
+Here I explore a different output format for visualising the daily temperature regimes of *F. exsecta* nests. This project is an extension of my undergraduate dissertation and the output formats I used there. 
 
-[**Read more...**](f.exsecta.html) **|** [**Source code**](https://github.com/zibbini/minor_projects/tree/master/F.exsecta_analysis)
+[**Read more...**](fexsecta_heatmaps.html) **|** [**Source code**](https://github.com/zibbini/minor_projects/blob/master/F.exsecta_analysis/R/Heatmaps.R)
 
 </div>
 
 <br/>
+
+<div class = "one">
+
+### A simple GUI for exploring individual nest characteristics of *F. exsecta* nests
+
+This small project is an exploration into the interactive visualisation capabilities of R without using `shiny`. It is an extension of my dissertation and aims to make the process of monitoring individual nests easier.
+
+[**Read more...**](f.exsecta_gui.html) **|** [**Source code**](https://github.com/zibbini/minor_projects/blob/master/F.exsecta_analysis/R/Info_board.R)
+
+</div>
