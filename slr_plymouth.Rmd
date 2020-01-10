@@ -2,10 +2,6 @@
 title: ""
 output:
   html_document:
-    toc: true
-    toc_float: 
-      collapsed: false
-      smooth_scroll: false
     css: wallpaper.css
     theme: lumen
     include:
@@ -22,11 +18,7 @@ div.one { background-color:#FFFFFF; border-radius: 5px; padding: 20px; opacity: 
 
 <div class = "one">
 
-### Introduction
-
-Insert text here
-
-I had the following questions before going into the analysis itself:
+With the wide availability of good quality LIDAR data, especially in the UK, visualising sea level changes is relatively easy. I had the following questions before going into the analysis itself:
 
 * What is the projected sea level rise in Plymouth and the surrouding areas?
 * How much land will be lost as a result? 
@@ -43,7 +35,62 @@ div.results { background-color:#FFFFFF; border-radius: 5px; padding: 20px; opaci
 
 ### Results
 
+#### Projections
+
+Projections from Met Office based on the most recent models suggest that we can expect between ~1m and ~2.5m by 2300 (Fig. 1). If we take the highest and lowest percentiles of each model, we can expect between ~0.6 and ~4m of sea level rise. Note however, that the predictions that have the most confidence are those from the 50% percentile. Similarly, the confidence of the predictions reduces the further they are from the present. 
+
+![](img/slr/summaryplot.png)
+
+**Figure 1**. Line graphs for the projected sea level rise according to the various representative concentration pathways (RCP). Adjacent graphs on the right cover the variability in projections between the percentiles (5% - 95%).
+
+#### Animating the impact
+
+Below are animations corresponding to each RCP model, visualised for 2019 - 2300 for Plymouth and the surrounding areas. Visualising the sea level rise in this format, it becomes quite clear just how much land could be lost over the coming decades and centuries. It is important to bear in mind the steep elevation in many areas in Plymouth. If we applied this same visualisation to a more low-lying and level area, the effects could be much more drastic. 
+
+**RCP 2.6**
+![](img/slr/rcp2.6.gif)
+**RCP 4.5**
+![](img/slr/rcp4.5.gif)
+
+**RCP 8.5**
+![](img/slr/rcp8.5.gif)
+
+**Figure 2**. Animations of the projected sea level rise in Plymouth 2019 - 2300. 
+
+A interactive version of the above animations is available [here](https://z-lab.shinyapps.io/slrvis/). However, please note that this format is not necessarily a reliable representation of the data. I have covered this in more detail [here](https://github.com/zibbini/minor_projects/tree/master/SLR_Plymouth/shiny). 
+
+#### Quantifying the area lost
+
+Finally, I sought to quantify the area of land that would be flooded due to such sea level rise. In the worst case scenario, we could expect to lose up to ~3.8 km<sup>2</sup> of land by 2300. This is roughly equivalent in area to ~633 football fields. Conversely, in the best case scenario, we could still expect to lose ~1.2 km<sup>2</sup> by 2300. This would still be in the vicinity of roughly 200 footbal fields in area. If we look at projections for this century, we could expect to lose between ~0.4 and ~0.7 km<sup>2</sup>. This would be equivalent to ~67-116 football fields in area. 
+
+![](img/slr/landlost.png)
+
 </div>
 
+<br/>
+
+<div class = "one">
+
 ### Methods
+
+The processing pipeline for this section is split into pre-processing in bash and QGIS 3.10.0, classification and analysis in R, and finally post-processing of the data in bash. 
+
+#### Pre-processing data
+
+Pre-processing leveraged GDAL and Raster processing tools in QGIS to build the final digital terrain model and remove incomplete data. The final model was aggregated by a factor of 10 (from a 2m DTM) to reduce computation time further down the processing pipeline. Conversion of raster to xyz format was handled with GDAL and `sed`. 
+
+#### Classifying and mapping the DTM
+
+Classification was conducted iteratively, across all RCP models for the 50<sup>th</sup> percentile projection using packages `readr` for importing the DTM, and `foreach`, `parallel` and `doParallel` for parallelising the task. 
+
+Plotting the classified DTM was handled with packages `ggplot2` and my own wrapper function: [`plot.save()`](https://github.com/zibbini/minor_projects/blob/master/SLR_Plymouth/R/plot.save.R). Package `rgdal` and `ggplot2` were used for data preparation of the roads shapefile for the final plot. Finally, package `parallel` was used for parallising the plotting task. 
+
+Please note that this is not the most optimised method for classifying and plotting the DTM. I am currently in the process of updating the code to leverage the `raster` and `rasterVis` packages to speed up such operations. Source code for this section can be found [here](https://github.com/zibbini/minor_projects/tree/master/SLR_Plymouth/R).
+
+#### Post processing
+
+`ImageMagick` was used for producing the final animations, using a separate bash script which you can find [here](https://github.com/zibbini/minor_projects/blob/master/SLR_Plymouth/bash/animate.sh).
+
+
+
 
