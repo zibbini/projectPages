@@ -2,13 +2,8 @@
 title: ""
 output:
   html_document:
-    toc: true
-    toc_float: 
-      collapsed: false
-      smooth_scroll: false
     css: wallpaper.css
     theme: lumen
-    
     include:
       after_body: footer.html
 ---
@@ -36,18 +31,6 @@ This project was intended as an exploration into the capabilites of `shiny` and 
 
 <br/>
 
-<div class = "one">
-
-### Methods
-
-All of the tide data was obtained from the Marine institute in Ireland. All data prep was handled in a separate R script which you can find [here](). The entire dataset was subsetted first by whether the data was modelled or not, and second by location. This two step categorisation overcame the performance issues faced when loading the whole dataset at once. The end result is that a single small `.rds` file is only loaded at any one time, which corresponds to the location selected. Lastly, date and time data was transformed to `xts` format for compatibility with `dygraphs`. 
-
-The shiny app itself went through several revisions before ending up on a simple intuitive result. The final pipeline for data processing is handled by an `observer` and several `reactives`. The `observer` is required to register the location clicked on the map, and then the `reactives` produce the dataset to be plotted, depending on the day selected. By default, the current day is used. 
-
-</div>
-
-<br/>
-
 <style>
 div.results { background-color:#FFFFFF; border-radius: 5px; padding: 20px; opacity: 0.95;}
 </style>
@@ -60,5 +43,17 @@ The final result looks as follows (deployed at [shinyapps.io](https://www.shinya
 [![img](img/shinyapp.png)](https://z-lab.shinyapps.io/tide-dashboard/)
 
 Clicking the screenshot will take you to the live version of the dashboard containing non-modelled data.
+
+</div>
+
+<br/>
+
+<div class = "one">
+
+### Methods
+
+All of the tide data was obtained from the Marine institute in Ireland. All data prep was handled in a separate R script which you can find [here](https://github.com/zibbini/tidedashboard/blob/master/data_prep.R). The entire dataset was subsetted first by whether the data was modelled or not, and second by location. This two step categorisation overcame the performance issues faced when loading the whole dataset at once. The end result is that a single small `.rds` file is only loaded at any one time, which corresponds to the location selected. Lastly, date and time data was transformed to `xts` format for compatibility with `dygraphs`. 
+
+The shiny app itself went through several revisions before ending up on a simple intuitive result. The final pipeline for data processing is handled by an `observer` and several `reactives`. The `observer` is required to register the location clicked on the map, and then the `reactives` produce the dataset to be plotted, depending on the day selected. By default, the current day is used. 
 
 </div>

@@ -19,9 +19,6 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -254,75 +251,6 @@ $(document).ready(function () {
 
 
 
-<style type="text/css">
-
-#TOC {
-  margin: 25px 0px 20px 0px;
-}
-@media (max-width: 768px) {
-#TOC {
-  position: relative;
-  width: 100%;
-}
-}
-
-@media print {
-.toc-content {
-  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
-  float: right;
-}
-}
-
-.toc-content {
-  padding-left: 30px;
-  padding-right: 40px;
-}
-
-div.main-container {
-  max-width: 1200px;
-}
-
-div.tocify {
-  width: 20%;
-  max-width: 260px;
-  max-height: 85%;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  div.tocify {
-    width: 25%;
-  }
-}
-
-@media (max-width: 767px) {
-  div.tocify {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-.tocify ul, .tocify li {
-  line-height: 20px;
-}
-
-.tocify-subheader .tocify-item {
-  font-size: 0.90em;
-}
-
-.tocify .list-group-item {
-  border-radius: 0px;
-}
-
-.tocify-subheader {
-  display: inline;
-}
-.tocify-subheader .tocify-item {
-  font-size: 0.95em;
-}
-
-</style>
-
-
 
 </head>
 
@@ -330,16 +258,6 @@ div.tocify {
 
 
 <div class="container-fluid main-container">
-
-
-<!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
-<div class="col-xs-12 col-sm-4 col-md-3">
-<div id="TOC" class="tocify">
-</div>
-</div>
-
-<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -401,20 +319,20 @@ div.one { background-color:#FFFFFF; border-radius: 5px; padding: 20px; opacity: 
 </ul>
 </div>
 <p><br/></p>
-<div class="one">
-<h3 id="methods">Methods</h3>
-<p>All of the tide data was obtained from the Marine institute in Ireland. All data prep was handled in a separate R script which you can find <a href="">here</a>. The entire dataset was subsetted first by whether the data was modelled or not, and second by location. This two step categorisation overcame the performance issues faced when loading the whole dataset at once. The end result is that a single small <code>.rds</code> file is only loaded at any one time, which corresponds to the location selected. Lastly, date and time data was transformed to <code>xts</code> format for compatibility with <code>dygraphs</code>.</p>
-<p>The shiny app itself went through several revisions before ending up on a simple intuitive result. The final pipeline for data processing is handled by an <code>observer</code> and several <code>reactives</code>. The <code>observer</code> is required to register the location clicked on the map, and then the <code>reactives</code> produce the dataset to be plotted, depending on the day selected. By default, the current day is used.</p>
-</div>
-<p><br/></p>
 <style>
 div.results { background-color:#FFFFFF; border-radius: 5px; padding: 20px; opacity: 0.95;}
 </style>
 <div class="results">
-<h3 id="results">Results:</h3>
+<h3 id="results">Results</h3>
 <p>The final result looks as follows (deployed at <a href="https://www.shinyapps.io/">shinyapps.io</a>):</p>
 <p><a href="https://z-lab.shinyapps.io/tide-dashboard/"><img src="img/shinyapp.png" alt="img" /></a></p>
 <p>Clicking the screenshot will take you to the live version of the dashboard containing non-modelled data.</p>
+</div>
+<p><br/></p>
+<div class="one">
+<h3 id="methods">Methods</h3>
+<p>All of the tide data was obtained from the Marine institute in Ireland. All data prep was handled in a separate R script which you can find <a href="https://github.com/zibbini/tidedashboard/blob/master/data_prep.R">here</a>. The entire dataset was subsetted first by whether the data was modelled or not, and second by location. This two step categorisation overcame the performance issues faced when loading the whole dataset at once. The end result is that a single small <code>.rds</code> file is only loaded at any one time, which corresponds to the location selected. Lastly, date and time data was transformed to <code>xts</code> format for compatibility with <code>dygraphs</code>.</p>
+<p>The shiny app itself went through several revisions before ending up on a simple intuitive result. The final pipeline for data processing is handled by an <code>observer</code> and several <code>reactives</code>. The <code>observer</code> is required to register the location clicked on the map, and then the <code>reactives</code> produce the dataset to be plotted, depending on the day selected. By default, the current day is used.</p>
 </div>
 </div>
 
@@ -435,8 +353,6 @@ div.results { background-color:#FFFFFF; border-radius: 5px; padding: 20px; opaci
 </div>
 
 
-</div>
-</div>
 
 </div>
 
@@ -469,32 +385,6 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = false;
-    options.smoothScroll = false;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
