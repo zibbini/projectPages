@@ -19,9 +19,6 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -254,75 +251,6 @@ $(document).ready(function () {
 
 
 
-<style type="text/css">
-
-#TOC {
-  margin: 25px 0px 20px 0px;
-}
-@media (max-width: 768px) {
-#TOC {
-  position: relative;
-  width: 100%;
-}
-}
-
-@media print {
-.toc-content {
-  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
-  float: right;
-}
-}
-
-.toc-content {
-  padding-left: 30px;
-  padding-right: 40px;
-}
-
-div.main-container {
-  max-width: 1200px;
-}
-
-div.tocify {
-  width: 20%;
-  max-width: 260px;
-  max-height: 85%;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  div.tocify {
-    width: 25%;
-  }
-}
-
-@media (max-width: 767px) {
-  div.tocify {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-.tocify ul, .tocify li {
-  line-height: 20px;
-}
-
-.tocify-subheader .tocify-item {
-  font-size: 0.90em;
-}
-
-.tocify .list-group-item {
-  border-radius: 0px;
-}
-
-.tocify-subheader {
-  display: inline;
-}
-.tocify-subheader .tocify-item {
-  font-size: 0.95em;
-}
-
-</style>
-
-
 
 </head>
 
@@ -330,16 +258,6 @@ div.tocify {
 
 
 <div class="container-fluid main-container">
-
-
-<!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
-<div class="col-xs-12 col-sm-4 col-md-3">
-<div id="TOC" class="tocify">
-</div>
-</div>
-
-<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -391,9 +309,7 @@ div.tocify {
 div.one { background-color:#FFFFFF; border-radius: 5px; padding: 20px; opacity: 0.85;}
 </style>
 <div class="one">
-<h3 id="introduction">Introduction</h3>
-<p>Insert text here</p>
-<p>I had the following questions before going into the analysis itself:</p>
+<p>With the wide availability of good quality LIDAR data, especially in the UK, visualising sea level changes is relatively easy. I had the following questions before going into the analysis itself:</p>
 <ul>
 <li>What is the projected sea level rise in Plymouth and the surrouding areas?</li>
 <li>How much land will be lost as a result?</li>
@@ -405,9 +321,40 @@ div.results { background-color:#FFFFFF; border-radius: 5px; padding: 20px; opaci
 </style>
 <div class="results">
 <h3 id="results">Results</h3>
+<h4 id="projections">Projections</h4>
+<p>Projections from Met Office based on the most recent models suggest that we can expect between ~1m and ~2.5m by 2300 (Fig. 1). If we take the highest and lowest percentiles of each model, we can expect between ~0.6 and ~4m of sea level rise. Note however, that the predictions that have the most confidence are those from the 50% percentile. Similarly, the confidence of the predictions reduces the further they are from the present.</p>
+<p><img src="img/slr/summaryplot.png" /></p>
+<p><strong>Figure 1</strong>. Line graphs for the projected sea level rise according to the various representative concentration pathways (RCP). Adjacent graphs on the right cover the variability in projections between the percentiles (5% - 95%).</p>
+<h4 id="animating-the-impact">Animating the impact</h4>
+<p>Below are animations corresponding to each RCP model, visualised for 2019 - 2300 for Plymouth and the surrounding areas. Visualising the sea level rise in this format, it becomes quite clear just how much land could be lost over the coming decades and centuries. It is important to bear in mind the steep elevation in many areas in Plymouth. If we applied this same visualisation to a more low-lying and level area, the effects could be much more drastic.</p>
+<p><strong>RCP 2.6</strong> <img src="img/slr/rcp2.6.gif" /> <strong>RCP 4.5</strong> <img src="img/slr/rcp4.5.gif" /></p>
+<p><strong>RCP 8.5</strong> <img src="img/slr/rcp8.5.gif" /></p>
+<p><strong>Figure 2</strong>. Animations of the projected sea level rise in Plymouth 2019 - 2300.</p>
+<p>A interactive version of the above animations is available <a href="https://z-lab.shinyapps.io/slrvis/">here</a>. However, please note that this format is not necessarily a reliable representation of the data. I have covered this in more detail <a href="https://github.com/zibbini/minor_projects/tree/master/SLR_Plymouth/shiny">here</a>.</p>
+<h4 id="quantifying-the-area-lost">Quantifying the area lost</h4>
+<p>Finally, I sought to quantify the area of land that would be flooded due to such sea level rise. In the worst case scenario, we could expect to lose up to ~3.8 km<sup>2</sup> of land by 2300. This is roughly equivalent in area to ~633 football fields. Conversely, in the best case scenario, we could still expect to lose ~1.2 km<sup>2</sup> by 2300. This would still be in the vicinity of roughly 200 footbal fields in area. If we look at projections for this century, we could expect to lose between ~0.4 and ~0.7 km<sup>2</sup>. This would be equivalent to ~67-116 football fields in area.</p>
+<p><img src="img/slr/landlost.png" /></p>
 </div>
+<p><br/></p>
+<div class = "one">
+
 <div id="methods" class="section level3">
 <h3>Methods</h3>
+<p>The processing pipeline for this section is split into pre-processing in bash and QGIS 3.10.0, classification and analysis in R, and finally post-processing of the data in bash.</p>
+<div id="pre-processing-data" class="section level4">
+<h4>Pre-processing data</h4>
+<p>Pre-processing leveraged GDAL and Raster processing tools in QGIS to build the final digital terrain model and remove incomplete data. The final model was aggregated by a factor of 10 (from a 2m DTM) to reduce computation time further down the processing pipeline. Conversion of raster to xyz format was handled with GDAL and <code>sed</code>.</p>
+</div>
+<div id="classifying-and-mapping-the-dtm" class="section level4">
+<h4>Classifying and mapping the DTM</h4>
+<p>Classification was conducted iteratively, across all RCP models for the 50<sup>th</sup> percentile projection using packages <code>readr</code> for importing the DTM, and <code>foreach</code>, <code>parallel</code> and <code>doParallel</code> for parallelising the task.</p>
+<p>Plotting the classified DTM was handled with packages <code>ggplot2</code> and my own wrapper function: <a href="https://github.com/zibbini/minor_projects/blob/master/SLR_Plymouth/R/plot.save.R"><code>plot.save()</code></a>. Package <code>rgdal</code> and <code>ggplot2</code> were used for data preparation of the roads shapefile for the final plot. Finally, package <code>parallel</code> was used for parallising the plotting task.</p>
+<p>Please note that this is not the most optimised method for classifying and plotting the DTM. I am currently in the process of updating the code to leverage the <code>raster</code> and <code>rasterVis</code> packages to speed up such operations. Source code for this section can be found <a href="https://github.com/zibbini/minor_projects/tree/master/SLR_Plymouth/R">here</a>.</p>
+</div>
+<div id="post-processing" class="section level4">
+<h4>Post processing</h4>
+<p><code>ImageMagick</code> was used for producing the final animations, using a separate bash script which you can find <a href="https://github.com/zibbini/minor_projects/blob/master/SLR_Plymouth/bash/animate.sh">here</a>.</p>
+</div>
 </div>
 </div>
 
@@ -428,8 +375,6 @@ div.results { background-color:#FFFFFF; border-radius: 5px; padding: 20px; opaci
 </div>
 
 
-</div>
-</div>
 
 </div>
 
@@ -462,32 +407,6 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = false;
-    options.smoothScroll = false;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
