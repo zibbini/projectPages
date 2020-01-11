@@ -24,11 +24,9 @@ This small project is an exploration into the interactive visualisation capabili
 
 </div>
 
-<style>
-div.gui { background-color:#F8F4EC; border-radius: 5px; padding: 20px; opacity: 0.95;}
-</style>
+<br/>
 
-<div class = "gui">
+<div class = "results">
 
 ### GUI for exploring individual nest characteristics
 
