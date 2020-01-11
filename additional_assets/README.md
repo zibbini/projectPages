@@ -1,5 +1,3 @@
-Supplementary code will be added in due course.
-
 ## The role of nest composition and sunlight for thermoregulation in the nests of *Formica exsecta* (Hymenoptera: Formicidae); implications for conservation 
 
 ### Abstract
