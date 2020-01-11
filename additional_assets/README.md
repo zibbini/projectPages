@@ -1,0 +1,10 @@
+Supplementary code will be added in due course.
+
+## The role of nest composition and sunlight for thermoregulation in the nests of *Formica exsecta* (Hymenoptera: Formicidae); implications for conservation 
+
+### Abstract
+
+Mound building ants are dominant, ecologically important species in temperate ecosystems. In Britain, the distribution of the endangered narrow-headed ant, *Formica exsecta*, has contracted and is now restricted to several remnant populations. Ecological knowledge of this species is still in its infancy, and further insight is becoming increasingly important with the rising use of assisted colonisation. To date, research suggests that temperature and sunlight conditions largely underpin the survival of this species. In an isolated population at Chudleigh Knighton Heath, the temperature variability of populated nests was separately compared with both undisturbed soil and abandoned nests in conjunction with analyses of above-nest hemispherical photographs. Various temperature measures were quantified, followed by pairwise comparison for both monitoring periods. Light parameters were quantified through Gap Light Analyser, followed by pairwise comparison with nest size. Populated nests exhibited clear differentiation in temperature to undisturbed soil (t3552 = 59.74, P < 0.0001), but comparatively little with abandoned nests (t938 = -1.88, P = 0.06). Nests were generally situated in open areas, but no correlates were found between nest size and light parameters. The daily temperature regime of *F. exsecta* nests is likely to be predominately controlled by nest composition. In addition to the selection for nest sites in open areas, this suggests that *F. exsecta* thermoregulates nests according to sunlight induced thermal gradients. This could explain the differences in nest phenotype exhibited by this species relative to other mound building species, and could facilitate more effective conservation at this site.
+
+**Keywords** Endangered, Formicidae, Thermoregulation, Nesting strategies
+
