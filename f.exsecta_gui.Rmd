@@ -10,7 +10,7 @@ output:
 
 <br/>
 
-## A simple GUI for exploring individual nest characteristics
+## A simple GUI for exploring individual nest characteristics of *F. exsecta* nests
 
 <br/>
 
