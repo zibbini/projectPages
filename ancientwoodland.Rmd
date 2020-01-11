@@ -10,7 +10,7 @@ output:
 
 <br/>
 
-# Exploring the distribution of ancient woodland in England
+# Exploring the distribution of Ancient Woodland in England
 
 <style>
 div.one { background-color:#FFFFFF; border-radius: 5px; padding: 20px; opacity: 0.85;}
@@ -20,7 +20,7 @@ div.one { background-color:#FFFFFF; border-radius: 5px; padding: 20px; opacity: 
 
 ## Introduction
 
-Inspired by the work being carried out in the Ancient Woodland inventory project, I decided to do some exploratory analysis and visualisation of the various AW sites in England. Ancient woodland is a relatively understudied ecosystem, though numerous in number of sites with some ~53000 sites just in England, individual sites are extraordinarily small on average. With increasing land-use pressures, fragmentation and habitat degradation, understanding and identifying ancient woodland habitat is paramount. 
+Inspired by the work being carried out in the Ancient Woodland (AW) inventory project, I decided to do some exploratory analysis and visualisation of the various AW sites in England. Ancient woodland is a relatively understudied ecosystem, though numerous in number of sites with some ~53000 sites just in England, individual sites are extraordinarily small on average. With increasing land-use pressures, fragmentation and habitat degradation, understanding and identifying ancient woodland habitat is paramount. 
 
 I had the following questions before going into the analysis itself:
 
@@ -41,15 +41,15 @@ div.results { background-color:#FFFFFF; border-radius: 5px; padding: 20px; opaci
 
 ### What are the average characteristics of individual AW sites?
 
-The average area (km2) of ancient woodland sites in England is relatively small (6.85 ± 0.077). Further, perimeters (m) of individual sites are relatively large (1309.48 ± 6.82), a potential by-product of severe fragmentation. Taken together, this could potentially result in pronounced edge effects as the effective area of an individual site is reduced by a substantial perimeter with neighboring environments. That said, there are some extraordinarily large ancient woodland sites, with the largest site being 719.43 km2. Most sites, however, are small by area and possess substantial boundaries with surrounding areas (Fig. 1). 
+The average area (km2) of AW sites in England is relatively small (6.85 ± 0.077). Further, perimeters (m) of individual sites are relatively large (1309.48 ± 6.82), a potential by-product of severe fragmentation. Taken together, this could potentially result in pronounced edge effects as the effective area of an individual site is reduced by a substantial perimeter with neighboring environments. That said, there are some extraordinarily large ancient woodland sites, with the largest site being 719.43 km<sup>2</sup>. Most sites, however, are small by area and possess substantial boundaries with surrounding areas (Fig. 1). 
 
 ![](img/ancientwoodland/dist_plot.png)
 
-**Figure 1.** Frequency plots for area (a) and perimeter (b) of ancient woodland sites in England. Plots are split according to the x axis scale, with both linear (i) and logarithmic (ii) scales shown. Area data-points were converted to m2 prior to conducting a log10 transform to avoid the inclusion of negative values.  
+**Figure 1.** Frequency distribution plots for area (a) and perimeter (b) of Ancient Woodland sites in England. Plots are split according to the x axis scale, with both linear (i) and logarithmic (ii) scales shown.   
 
 ### Where are the majority of AW sites located in England? {.tabset}
 
-To answer this question I produced three separate maps, each containing a different output format (Fig. 2). From all three, it is clear that the majority of Ancient Woodland is located in the South East and the West Midlands (Fig. 2). There are some additional, smaller hotspots located in the North West, East Midlands and Yorkshire and the Humber. Using the interactive chloropleth (Fig. 2c), we can see where Ancient Woodland is located by city districts. Herefordshire and Wealden contain the most AW sites with both over ~2000 sites each (Fig. 2c).
+To answer this question I produced three separate maps, each containing a different output format (Fig. 2). From all three, it is clear that the majority of AW sites are located in the South East and West Midlands (Fig. 2). There are some additional, smaller hotspots located in the North West, East Midlands and Yorkshire and the Humber. Using the interactive chloropleth (Fig. 2c), we can see where Ancient Woodland is located by city districts. Herefordshire and Wealden contain the most AW sites with both containing over ~2000 sites each (Fig. 2c).
 
 #### Hexbin
 
@@ -139,13 +139,13 @@ One of the primary goals of Ancient Woodland conservation in England is to ident
 
 **Figure 3**. Climatic suitability for Ancient Woodland in England, based on a deviation index derived from the average of 17 rescaled bioclimatic layers.
 
-With such an index, we can locate areas where Ancient Woodland is most likely to be, based on climatic conditions alone. Interestingly, there are some areas where there is a mis-match between the climatic suitability and the number of AW sites located there (e.g. in Norfolk and Lancashire)(Fig. 3). This could either be a result of other contributing factors or under-sampling in the region. Both are probable and a further review of the literature would be required to understand the weight of such factors, which is outside the scope of this project. 
+With such an index, we can locate areas where Ancient Woodland is most likely to be based on climatic conditions alone. Interestingly, there are some areas where there is a mis-match between the climatic suitability and the number of AW sites located there (e.g. in Norfolk and Lancashire)(Fig. 3). This could either be a result of other contributing factors or under-sampling in the region. Both are probable and a further review of the literature would be required to understand the weight of such factors, which is outside the scope of this project. 
 
-In addition, I opted to test the accuracy of the final, mean deviation index produced using an arbitrary threshold at a deviation of 0.1 (note this threshold is on the scale of the deviation index itself: 0 - 1). Using [`validate()`](https://github.com/zibbini/minor_projects/blob/master/ancient_woodland/R/fun/validate.R), the accuracy of such a threshold was 47.62%. Such a result is not surprising even if it is at an arbitrary threshold, given that the method employed is rudimentary. A visual representation of the threshold can be found below:
+In addition, I opted to test the accuracy of the final, average deviation index produced using an arbitrary threshold at a deviation of 0.1 (note this threshold is on the scale of the average deviation index itself: 0 - 1). Using [`validate()`](https://github.com/zibbini/minor_projects/blob/master/ancient_woodland/R/fun/validate.R), the accuracy of such a threshold was 47.62%. Such a result is not surprising even if it is at an arbitrary threshold, given that the method employed is rudimentary. A visual representation of the threshold can be found below:
 
 ![](img/ancientwoodland/threshold.png)
 
-**Figure 4**. Suitable areas for Ancient Woodland at a threshold of 0.1, based on a deviation index derived from the average of 17 rescaled bioclimatic layers.
+**Figure 4**. Suitable areas for Ancient Woodland at a threshold of 0.1, based on the average deviation index derived from 17 rescaled bioclimatic layers.
 
 Please note that this solution is by no means comprehensive and is a simple, first exploration into possible methods for identifying areas where the probability of finding Ancient Woodland is the highest. 
 
@@ -221,10 +221,9 @@ Lastly, I sought to quantify the range of bioclimatic conditions found at AW sit
 
 ###
 
-**Figure 5**. Frequency distribution plots for each bioclimatic parameter sourced from WorldClim (Fick and Hijmans, 2017). The number for each corresponds to the labelling found on WorldClim.
+**Figure 5**. Frequency distribution plots for the bioclimatic conditions found at AW sites in England. The number for each corresponds to the labelling found on WorldClim (Fick and Hijmans, 2017).
 
 Some climatic variables contain much tighter distributions with a smaller standard deviation (Fig. 5), suggesting that Ancient Woodland has a relatively small range of climatic conditions it can occur over. This could be due to the abiotic requirements of specific keystone species or the community of species as a whole. Nonetheless, this could mean Ancient Woodland is particularly susceptible to climate change and we could see the loss of much of this endangered habitat in the coming decades. 
-
 
 ## Methods
 
@@ -236,7 +235,7 @@ All analysis for this section was handled by an individual script which you can 
 se <- function(x) (sd(x)/sqrt(length(x)))
 ```
 
-Visualising the frequency distributions was conducted using packages `ggplot2` and `gridExtra`.
+Area data-points were converted to m<sup>2</sup> prior to conducting a log<sub>10</sub> transform to avoid the inclusion of negative values. Visualising the frequency distributions was conducted using packages `ggplot2` and `gridExtra`.
 
 ### Visualising where AW sites are located
 
