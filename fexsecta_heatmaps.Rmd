@@ -10,7 +10,21 @@ output:
 
 <br/>
 
-## Visualising nest temperature of *F. exsecta* nests 
+## Visualising the inner nest temperature of *F. exsecta* nests 
+
+<br/>
+
+<style>
+div.one { background-color:#FFFFFF; border-radius: 5px; padding: 20px; opacity: 0.85;}
+</style>
+
+<div class = "one">
+
+### Introduction
+
+Here I explore a different output format for visualising the daily temperature regimes of *F. exsecta* nests. This project is an extension of my undergraduate [dissertation](https://github.com/zibbini/projectPages/tree/master/additional_assets) and the output formats I used there. The output format I explored was the popular time series heatmap. 
+
+</div>
 
 <br/>
 
@@ -20,7 +34,9 @@ div.results { background-color:#FFFFFF; border-radius: 5px; padding: 20px; opaci
 
 <div class = "results">
 
-Here I explore a different output format for visualising the daily temperature regimes of *F. exsecta* nests. This project is an extension of my undergraduate [dissertation](https://github.com/zibbini/projectPages/tree/master/additional_assets) and the output formats I used there. The output format I explored was the popular time series heatmap. The first pair of heatmaps represents a single pair of loggers, with the first monitoring the temperature of a single *F. exsecta* nest and the second monitoring the temperature of the soil 1m from the respective nest (Fig. 1). From Fig. 1, we can clearly see the different heating and cooling rates found in *F. exsecta* nests compared to the soil control. 
+### Results
+
+The first pair of heatmaps represents a single pair of loggers, with the first monitoring the temperature of a single *F. exsecta* nest and the second monitoring the temperature of the soil 1m from the respective nest (Fig. 1). From Fig. 1, we can clearly see the different heating and cooling rates found in *F. exsecta* nests compared to the soil control. 
 
 ![](img/f.exsecta/heatmap1.png)
 
@@ -36,10 +52,6 @@ The following pair of heatmaps represents the mean temperature for the monitored
 
 <br/>
 
-<style>
-div.one { background-color:#FFFFFF; border-radius: 5px; padding: 20px; opacity: 0.85;}
-</style>
-
 <div class = "one">
 
 ### Methods
@@ -47,18 +59,3 @@ div.one { background-color:#FFFFFF; border-radius: 5px; padding: 20px; opacity: 
 Data preparation was carried out using packages `lubridate`, `data.table` and `plyr`. Producing the heatmaps involved the use of packages `ggplot2`, `gridExtra` and `RColorBrewer`. Source code for this project is available [here](https://github.com/zibbini/minor_projects/blob/master/F.exsecta_analysis/R/Heatmaps.R). Data was sourced from my undergraduate [dissertation](https://github.com/zibbini/projectPages/tree/master/additional_assets). 
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
