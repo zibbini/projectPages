@@ -145,6 +145,8 @@ In addition, I opted to test the accuracy of the final, mean deviation index pro
 
 ![](img/ancientwoodland/threshold.png)
 
+**Figure 4**. Suitable areas for Ancient Woodland at a threshold of 0.1, based on a deviation index derived from the average of 17 rescaled bioclimatic layers.
+
 Please note that this solution is by no means comprehensive and is a simple, first exploration into possible methods for identifying areas where the probability of finding Ancient Woodland is the highest. 
 
 Lastly, I sought to quantify the range of bioclimatic conditions found at AW sites and visualise the result:
@@ -219,9 +221,9 @@ Lastly, I sought to quantify the range of bioclimatic conditions found at AW sit
 
 ###
 
-**Figure 4**. Frequency distribution plots for each bioclimatic parameter sourced from WorldClim (Fick and Hijmans, 2017). The number for each corresponds to the labelling found on WorldClim.
+**Figure 5**. Frequency distribution plots for each bioclimatic parameter sourced from WorldClim (Fick and Hijmans, 2017). The number for each corresponds to the labelling found on WorldClim.
 
-Some climatic variables contain much tighter distributions with a smaller standard deviation (Fig. 4), suggesting that Ancient Woodland has a relatively small range of climatic conditions it can occur over. This could be due to the abiotic requirements of specific keystone species or the community of species as a whole. Nonetheless, this could mean Ancient Woodland is particularly susceptible to climate change and we could see the loss of much of this endangered habitat in the coming decades. 
+Some climatic variables contain much tighter distributions with a smaller standard deviation (Fig. 5), suggesting that Ancient Woodland has a relatively small range of climatic conditions it can occur over. This could be due to the abiotic requirements of specific keystone species or the community of species as a whole. Nonetheless, this could mean Ancient Woodland is particularly susceptible to climate change and we could see the loss of much of this endangered habitat in the coming decades. 
 
 
 ## Methods
@@ -250,8 +252,14 @@ Quantifying the frequency of AW sites in each individual city district was condu
 
 Clipping the WorldClim bioclimatic layers to England was carried out using GDAL, in a bash script which you can find [here](https://github.com/zibbini/minor_projects/blob/master/ancient_woodland/bash/layer_prep.sh). The mask layer was sourced from Natural England UK. 
 
-Quantifying the climate suitability or average deviation index, required extracting values for each bioclimatic layer at the location of chosen point data, followed by mapping a deviation index onto the respective bioclimatic layer based on the mean of the extracted values. Note that extracted values here corresponds to only the extracted values of the specific bioclimatic layer, and not the extracted values of all the bioclimatic layers.  Transforming all the deviation indices to an arbitrary scale of 0 - 1 was required to aggregate all the deviation indices and quantify the average. Producing the individual indices was conducted using a helper function: [`rescale.mean()`](https://github.com/zibbini/minor_projects/blob/master/ancient_woodland/R/fun/rescale.R). 
+Quantifying the climate suitability or average deviation index, required extracting values for each bioclimatic layer at the location of chosen point data, followed by mapping a deviation index onto the respective bioclimatic layer based on the mean of the extracted values. Note that extracted values here corresponds to only the extracted values of the specific bioclimatic layer, and not the extracted values of all the bioclimatic layers. Further, due to the relatively low resolution of the bioclimatic layers (1 km<sup>2</sup>) and that they are produced through interpolation, a buffer was not used for extraction. Transforming all the deviation indices to an arbitrary scale of 0 - 1 was required to aggregate all the deviation indices and quantify the average. Producing the individual indices was conducted using a helper function: [`rescale.mean()`](https://github.com/zibbini/minor_projects/blob/master/ancient_woodland/R/fun/rescale.R). 
 
 The analysis for this section was handled using several helper [functions](https://github.com/zibbini/minor_projects/tree/master/ancient_woodland/R/fun) and a final [script](https://github.com/zibbini/minor_projects/blob/master/ancient_woodland/R/bioclim_analysis.R) containing the code used in creating the visualisations. You can find detailed information on the helper functions in their respective documentation. Packages `raster`, `proj4` and `rgdal` were used for spatial data manipulation. Packages `parallel`, `doParallel` and `foreach` were used for parallel computing tasks. Packages `ggplot2` and `ggsn` were used for visualisation purposes. Finally, package `docstring` was used for producing documentation for the helper functions. Bioclimatic data was sourced from WorldClim and GPS coordinate data was sourced from Natural England UK.
+
+## References
+
+Fick, S.E. and R.J. Hijmans, 2017. Worldclim 2: New 1-km spatial resolution climate surfaces for global land areas. International Journal of Climatology.
+
+
 
 
