@@ -22,6 +22,14 @@ div.results { background-color:#FFFFFF; border-radius: 5px; padding: 20px; opaci
 
 This small project is an exploration into the interactive visualisation capabilities of R without using `shiny`. It is an extension of my [dissertation](https://github.com/zibbini/projectPages/tree/master/additional_assets) and aims to make the process of monitoring individual nests easier. For example, by reducing the time needed to identify a set of nests with a certain diameter. 
 
+</div>
+
+<style>
+div.gui { background-color:#F8F4EC; border-radius: 5px; padding: 20px; opacity: 0.95;}
+</style>
+
+<div class = "gui">
+
 ### GUI for exploring individual nest characteristics
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
