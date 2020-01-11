@@ -45,7 +45,7 @@ Projections from Met Office based on the most recent models suggest that we can 
 
 #### Animating the impact
 
-Below are animations corresponding to each RCP model, visualised for 2019 - 2300 for Plymouth and the surrounding areas. Visualising the sea level rise in this format, it becomes quite clear just how much land could be lost over the coming decades and centuries. It is important to bear in mind the steep elevation in many areas in Plymouth. If we applied this same visualisation to a more low-lying and level area, the effects could be much more drastic. 
+Below are animations corresponding to each RCP model, visualised for 2019 - 2300 for Plymouth and the surrounding areas. By visualising the sea level rise in this format, it becomes quite clear just how much land could be lost over the coming decades and centuries. It is important to bear in mind the steep elevation in many areas in Plymouth. If we applied this same visualisation to a more low-lying and level area, with the corresponding projections, the effects could be much more drastic. 
 
 **RCP 2.6**
 ![](img/slr/rcp2.6.gif)
@@ -107,9 +107,4 @@ Flooded land was quantified from the classified DTM. This process was conducted 
 #### Interactive visualisation
 
 Data preparation for production of the GUI leveraged the data produced from classifying the DTM, using packages `raster`, `dplyr`, `sp` and `rgdal`. Package `parallel` was used for parallising this task. Data was additionally resampled by a factor of 1.5 to meet the memory requirements of `shinyapps.io`. Source code for data preparation can be found [here](https://github.com/zibbini/minor_projects/blob/master/SLR_Plymouth/R/filter_dtm_shiny.R). The final GUI was built using packages `shiny`, `leaflet`, `raster` and `rgdal`. Source code for the shiny GUI can be found [here](https://github.com/zibbini/minor_projects/blob/master/SLR_Plymouth/shiny/app.R).
-
-
-
-
-
 
