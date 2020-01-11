@@ -37,11 +37,11 @@ div.results { background-color:#FFFFFF; border-radius: 5px; padding: 20px; opaci
 
 #### Projections
 
-Projections from Met Office based on the most recent models suggest that we can expect between ~1m and ~2.5m by 2300 (Fig. 1). If we take the highest and lowest percentiles of each model, we can expect between ~0.6 and ~4m of sea level rise. Note however, that the predictions that have the most confidence are those from the 50% percentile. Similarly, the confidence of the predictions reduces the further they are from the present. 
+Projections from Met Office based on the most recent models suggest that we can expect between ~1m and ~2.5m by 2300 (Fig. 1). If we take the highest and lowest percentiles of each model, we can expect between ~0.6 and ~4m of sea level rise. Note however, that the predictions that have the most confidence are those from the 50<sup>th</sup> percentile. Similarly, the confidence of the predictions reduces the further they are from the present. 
 
 ![](img/slr/summaryplot.png)
 
-**Figure 1**. Line graphs for the projected sea level rise according to the various representative concentration pathways (RCP). Adjacent graphs on the right cover the variability in projections between the percentiles (5% - 95%).
+**Figure 1**. Projected sea level rise according to the various representative concentration pathways (RCP). Adjacent graphs on the right cover the variability in projections between the percentiles (5<sup>th</sup> - 95<sup>th</sup>). Delineation of the percentiles is as follows: 5, 10, 30, 33, 50, 67, 70, 90, 95.
 
 #### Animating the impact
 
